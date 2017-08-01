@@ -12,3 +12,14 @@
 .accomplishments {
   font-size: .8em;
 }
+
+.accomplishments li:last-of-type {
+  text-decoration: underline;
+}
+
+#personal-objective > p {
+  font-weight: bold;
+}
+
+
+
