@@ -1,7 +1,22 @@
-body:last-child {
-  display: block;
-  margin: auto;
-  border: 1px;
-  border-style: solid;
-  border-color: black;
+
+main {
+  position: relative;
+}
+
+#hat {
+  border: 1px solid blue;
+  width: 275px;
+  margin: 0 auto;
+}
+
+#glasses {
+  border: 1px solid red;
+  width: 135px;
+  margin: 0 auto;
+}
+
+#octopus {
+  border: 1px solid black;
+  width: 210px;
+  margin: 0 auto;
 }
