@@ -16,8 +16,6 @@ cite {
   padding-right: 1px;
 }
 
-/* 440 px  */
-
 main {
   width: 79%;
   display: inline-block;
@@ -50,3 +48,28 @@ body {
   max-width: 960px;
 }
 
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.8em
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: .8em
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body, #external-links  {
+    font-size: .8em
+  }
+}
+/*
+When smaller than 500px
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
