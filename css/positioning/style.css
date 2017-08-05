@@ -1,5 +1,4 @@
 main {
-  border: 1px solid black;
   width: 200px;
   margin: 50px auto;
   position: relative;
@@ -8,12 +7,10 @@ main {
 
 
 #octopus {
-  border: 1px solid black;
   z-index: 1;
 }
 
 #hat {
-  border: 1px solid blue;
   z-index: 3;
   position: relative;
   bottom: 350px;
@@ -21,7 +18,6 @@ main {
 }
 
 #glasses {
-  border: 1px solid red;
   z-index: 2;
   position: relative;
   bottom: 400px;
