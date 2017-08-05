@@ -3,27 +3,27 @@ main {
   width: 200px;
   margin: 50px auto;
   position: relative;
+  right: 50px;
 }
 
-/*
+
 #octopus {
   border: 1px solid black;
-  width: 210px;
-  margin: 50px auto 0;
   z-index: 1;
 }
 
 #hat {
   border: 1px solid blue;
-  width: 275px;
-  margin: 0 auto;
-  z-index: 3
+  z-index: 3;
+  position: relative;
+  bottom: 350px;
+  right: 20px;
 }
 
 #glasses {
   border: 1px solid red;
-  width: 135px;
-  margin: 0 auto;
   z-index: 2;
+  position: relative;
+  bottom: 400px;
+  left: 45px;
 }
-*/
