@@ -25,19 +25,23 @@ def get_health_ins_info
   health_ins == "y" ? true : false
 end
 
-def vampire_identification_survey
-  name = get_name
-  age_right = get_age_info
-  garlic_bread = get_garlic_bread_info
-  health_ins = get_health_ins_info
-
+def result(name, age_right, garlic_bread, health_ins)
   results = "Results inconclusive."
   results = "Probably not a vampire." if age_right && (garlic_bread || health_ins)
   results = "Probably a vampire." if !age_right && (!garlic_bread || !health_ins)
   results = "Almost certainly a vampire." if !age_right &&
   !garlic_bread && !health_ins
   results = "Definitely a vampire" if name == "Drake Cula" || name == "Tu Fang"
-  puts results
+  results
+end
+
+def vampire_identification_survey
+  name = get_name
+  age_right = get_age_info
+  garlic_bread = get_garlic_bread_info
+  health_ins = get_health_ins_info
+
+  puts result(name, age_right, garlic_bread, health_ins)
 end
 
 vampire_identification_survey
