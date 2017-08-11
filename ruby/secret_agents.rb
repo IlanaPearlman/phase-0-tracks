@@ -35,3 +35,9 @@ puts encrypt("abc")
 puts encrypt("zed")
 puts decrypt("bcd")
 puts decrypt("afe")
+
+puts encrypt(decrypt("swordfish"))
+=begin
+The above code returns "swordfish" because, as in math, the method specified within the innermost parentheses is run first, and then
+the results of running that method are passed to the outer method. Since encrypt and decrypt shift the letter by one in opposite directions, running one and then the other results in the original string being returned.
+=end
