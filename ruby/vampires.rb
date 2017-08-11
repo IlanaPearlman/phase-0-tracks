@@ -1,22 +1,35 @@
 require 'Date'
 
-def vampire_identification_survey
+def get_name
   puts "What is your name?"
-  name = gets.chomp
+  gets.chomp
+end
 
+def get_age_info
   puts "How old are you?"
   age = gets.chomp.to_f
   puts "What year were you born?"
   birth_year = gets.chomp.to_f
-  age_right = age == (Date.today.year - birth_year)
+  age == Date.today.year - birth_year
+end
 
-  puts "Our company cafeteria serves garlic bread. Should we order some for you?"
+def get_garlic_bread_info
+  puts "Our company cafeteria serves garlic bread. Should we order some for you? Y/N"
   garlic_bread = gets.chomp
-  garlic_bread = (garlic_bread == y ? true : false)
+  garlic_bread == "y" ? true : false
+end
 
+def get_health_ins_info
   puts "Would you like to enroll in the company’s health insurance? Y/N"
   health_ins = gets.chomp.downcase
-  health_ins = (health_ins == y ? true : false)
+  health_ins == "y" ? true : false
+end
+
+def vampire_identification_survey
+  name = get_name
+  age_right = get_age_info
+  garlic_bread = get_garlic_bread_info
+  health_ins = get_health_ins_info
 
   results = "Results inconclusive."
   results = "Probably not a vampire." if age_right && (garlic_bread || health_ins)
@@ -25,9 +38,6 @@ def vampire_identification_survey
   !garlic_bread && !health_ins
   results = "Definitely a vampire" if name == "Drake Cula" || name == "Tu Fang"
   puts results
-
 end
 
-get_employee_info
-
-current_year = Date.today.year
+vampire_identification_survey
