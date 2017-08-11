@@ -10,9 +10,11 @@ def word_alteration(word, num)
   index = 0
   while index < word.length
     ordinal = word[index].ord + num
-    ordinal -= ("z".ord - "a".ord) if ordinal > "z".ord
-    ordinal += ("z".ord - "a".ord) if ordinal < "a".ord
+    ordinal -= ("z".ord - "a".ord + 1) if ordinal > "z".ord
+    ordinal += ("z".ord - "a".ord + 1) if ordinal < "a".ord
     word[index] = ordinal.chr
+
+    index += 1
   end
   word
 end
@@ -29,7 +31,7 @@ def decrypt(word)
   word_alteration(word, -1)
 end
 
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
+puts encrypt("abc")
+puts encrypt("zed")
+puts decrypt("bcd")
+puts decrypt("afe")
