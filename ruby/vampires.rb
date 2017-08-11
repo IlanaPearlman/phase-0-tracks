@@ -36,12 +36,20 @@ def result(name, age_right, garlic_bread, health_ins)
 end
 
 def vampire_identification_survey
-  name = get_name
-  age_right = get_age_info
-  garlic_bread = get_garlic_bread_info
-  health_ins = get_health_ins_info
+  puts "How many employees are there to process"
+  employees = gets.chomp.to_i
+  index = 1
 
-  puts result(name, age_right, garlic_bread, health_ins)
+  while index <= employees
+    name = get_name
+    age_right = get_age_info
+    garlic_bread = get_garlic_bread_info
+    health_ins = get_health_ins_info
+
+    puts result(name, age_right, garlic_bread, health_ins)
+
+    index += 1
+  end
 end
 
 vampire_identification_survey
