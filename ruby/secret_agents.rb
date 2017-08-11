@@ -41,3 +41,13 @@ puts encrypt(decrypt("swordfish"))
 The above code returns "swordfish" because, as in math, the method specified within the innermost parentheses is run first, and then
 the results of running that method are passed to the outer method. Since encrypt and decrypt shift the letter by one in opposite directions, running one and then the other results in the original string being returned.
 =end
+
+def interface
+  puts "Would you like to decrypt or encrypt a password? Type 'd' for decrypt and 'e' for encrypt."
+  response = gets.chomp.downcase
+  puts "Please type the password."
+  password = gets.chomp
+  puts response == "d" ? decrypt(password) : encrypt(password)
+end
+
+interface
