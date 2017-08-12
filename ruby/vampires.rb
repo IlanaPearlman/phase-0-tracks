@@ -1,6 +1,7 @@
 require 'Date'
 
 def get_name
+  puts ""
   puts "What is your name?"
   gets.chomp
 end
@@ -46,12 +47,10 @@ def allergy_check
   nil
 end
 
-def vampire_identification_survey
-  puts "How many employees are there to process"
-  employees = gets.chomp.to_i
+def survey(num_employees)
   index = 1
 
-  while index <= employees
+  while index <= num_employees
     name = get_name
     age_right = get_age_info
     garlic_bread = get_garlic_bread_info
@@ -62,7 +61,15 @@ def vampire_identification_survey
 
     index += 1
   end
-    puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 
-vampire_identification_survey
+def vampires_identification_survey
+  puts "How many employees are there to process"
+  num_employees = gets.chomp.to_i
+
+  survey(num_employees)
+
+  puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+end
+
+vampires_identification_survey
