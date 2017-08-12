@@ -26,7 +26,7 @@ def get_health_ins_info
   health_ins == "y" ? true : false
 end
 
-def result(name, age_right, garlic_bread, health_ins)
+def vampire_test(name, age_right, garlic_bread, health_ins)
   results = "Results inconclusive."
   results = "Probably not a vampire." if age_right && (garlic_bread || health_ins)
   results = "Probably a vampire." if !age_right && (!garlic_bread || !health_ins)
@@ -57,7 +57,7 @@ def survey(num_employees)
     health_ins = get_health_ins_info
     allergies = allergy_check
 
-    puts (!allergies.nil? ? allergies : result(name, age_right, garlic_bread, health_ins))
+    puts (!allergies.nil? ? allergies : vampire_test(name, age_right, garlic_bread, health_ins))
 
     index += 1
   end
