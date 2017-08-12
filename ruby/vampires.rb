@@ -35,6 +35,19 @@ def result(name, age_right, garlic_bread, health_ins)
   results
 end
 
+def allergy_check
+  puts "Please list your allergies, one at a time."
+  allergy = nil
+  until allergy == "done"
+    puts "List an allergy or type 'done' if you are done."
+    allergy = gets.chomp.downcase
+    puts "the allergy is #{allergy}"
+    return "Probably a vampire." if allergy == "sunshine"
+    return "Probably a vampire." if allergy == "sunshine"
+  end
+  nil
+end
+
 def vampire_identification_survey
   puts "How many employees are there to process"
   employees = gets.chomp.to_i
@@ -46,10 +59,14 @@ def vampire_identification_survey
     garlic_bread = get_garlic_bread_info
     health_ins = get_health_ins_info
 
-    puts result(name, age_right, garlic_bread, health_ins)
+    allergy_check
+    #puts (!allergy_check.nil? ? allergy_check : result(name, age_right, garlic_bread, health_ins))
+
+    result(name, age_right, garlic_bread, health_ins)
 
     index += 1
   end
+    puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 
 vampire_identification_survey
