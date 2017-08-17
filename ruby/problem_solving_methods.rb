@@ -43,8 +43,8 @@ p fib(6)
 
 p fib(100)[-1] == 218922995834555169026
 
-# Pseudocode a sorting method that takes an array of integers and uses a sorting algorithm. The method should return a sorted version of the array. Your pseudocode should not be Ruby-specific.
 
+# Insertion Sort Pseudocode
 #loop through array number of times array is long
 #leave first number in place
 #at index 1 and for the rest of the numbers
@@ -54,4 +54,23 @@ p fib(100)[-1] == 218922995834555169026
 # insert it between number on left is smaller, number on right is bigger
 
 
-#Implement the sorting method in Ruby.
+#Implement the insertion sorting method in Ruby.
+def insertion_sort(array)
+#loop through array number of times array is long
+  index = 0
+  while index < array.length
+#leave first number (index 0) in place
+#at index 1 and for the rest of the numbers
+#look to left
+# if there are no bigger numbers on left, it stays
+#  if there are bigger number to the left, it moves
+    if index >= 1 && array[0..index - 1].any? {|val| val > array[index]}
+      puts "the current index is #{index}, its value is #{array[index]} and it has bigger numbers on the left in #{array[0..index - 1]}"
+# insert it between number on left is smaller, number on right is bigger
+
+    end
+  index += 1
+  end
+end
+
+insertion_sort([7,9,1,2,5,4,78,100,2])
