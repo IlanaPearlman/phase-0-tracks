@@ -65,12 +65,25 @@ def insertion_sort(array)
 # if there are no bigger numbers on left, it stays
 #  if there are bigger number to the left, it moves
     if index >= 1 && array[0..index - 1].any? {|val| val > array[index]}
-      puts "the current index is #{index}, its value is #{array[index]} and it has bigger numbers on the left in #{array[0..index - 1]}"
-# insert it between number on left is smaller, number on right is bigger
+# insert it at the beginning,or between number on left is smaller, number on right is bigger
 
+      sub_array = array[0..index - 1]
+      sub_index = 0
+      biggest_smaller = 0
+
+      while sub_index < sub_array.length
+        if sub_array[sub_index] < array[index]
+          biggest_smaller = sub_index
+        end
+      sub_index += 1
+      end
+
+    array.insert(array[index], biggest_smaller)
+    array.delete_at(index)
     end
   index += 1
   end
+  array
 end
 
-insertion_sort([7,9,1,2,5,4,78,100,2])
+p insertion_sort([7,9,1,2,5,4,78,100,90,50,200,5,2])
