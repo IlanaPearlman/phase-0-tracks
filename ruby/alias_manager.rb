@@ -30,4 +30,15 @@ def vowel_sub(char)
   index <= 4 ? 'aeiou'[index + 1] : 'a'
 end
 
-p fake_name("Felicia Torres")
+def fake_name_interface
+  loop do
+    puts "Please type a name to convert, format must be firstname<space>lastname, or type 'Quit' to exit"
+    user_input = gets.chomp
+
+    break if ['quit', 'Quit','Q','q'].include?(user_input)
+
+    puts fake_name(user_input)
+  end
+end
+
+fake_name_interface
