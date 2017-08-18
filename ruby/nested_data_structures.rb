@@ -39,14 +39,14 @@ highway = {
             },
             {car_2: ["Christian", "Kathy", "JP"]
             },
-            {car_3: ["Christian", "Kathy", "JP"]
+            {car_3: ["Molly", "Ally", "Al"]
             },
-            {car_4: ["Christian", "Kathy", "JP"]
+            {car_4: ["Zephyr", "Yoni", "Xavier"]
             },
         ]
-    }
+    },
     lane_4: {
-        current_accident: True,
+        current_accident: true,
         qualities: {
             material: "concrete",
             pot_holes: 3,
@@ -58,3 +58,8 @@ highway = {
         ]
     }
 }
+
+p highway[:lane_1][:vehicles].last[:car_2].first
+p highway[:lane_2][:current_accident]
+p highway[:lane_3][:vehicles][1][:car_2][2]
+p highway[:lane_4][:qualities][:needs_resurfacing]
