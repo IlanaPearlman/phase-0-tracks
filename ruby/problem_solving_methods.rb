@@ -43,7 +43,6 @@ p fib(6)
 
 p fib(100)[-1] == 218922995834555169026
 
-
 # Insertion Sort Pseudocode
 #loop through array number of times array is long
 #leave first number in place
@@ -56,15 +55,16 @@ p fib(100)[-1] == 218922995834555169026
 
 #Implement the insertion sorting method in Ruby.
 def insertion_sort(array)
+  p array
 #loop through array number of times array is long
-  index = 0
+  index = 1
   while index < array.length
 #leave first number (index 0) in place
 #at index 1 and for the rest of the numbers
 #look to left
 # if there are no bigger numbers on left, it stays
 #  if there are bigger number to the left, it moves
-    if index >= 1 && array[0..index - 1].any? {|val| val > array[index]}
+    if array[0..index - 1].any? {|val| val > array[index]}
 # insert it at the beginning,or between number on left is smaller, number on right is bigger
 
       sub_array = array[0..index - 1]
@@ -78,12 +78,20 @@ def insertion_sort(array)
       sub_index += 1
       end
 
-    array.insert(array[index], biggest_smaller)
-    array.delete_at(index)
+      current_value = array[index]
+      array.delete_at(index)
+
+      if array[0] >= current_value
+        array.unshift(current_value)
+      else
+        array.insert(biggest_smaller + 1, current_value)
+      end
+      p array
+
     end
-  index += 1
+    index += 1
   end
   array
 end
 
-p insertion_sort([7,9,1,2,5,4,78,100,90,50,200,5,2])
+p insertion_sort([10,1,9,100,2,8,3,50,7,-4,4,6,78,5])
