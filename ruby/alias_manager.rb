@@ -31,13 +31,21 @@ def vowel_sub(char)
 end
 
 def fake_name_interface
+  hash = {}
   loop do
     puts "Please type a name to convert, format must be firstname<space>lastname, or type 'Quit' to exit"
     user_input = gets.chomp
 
     break if ['quit', 'Quit','Q','q'].include?(user_input)
 
-    puts fake_name(user_input)
+    fake = fake_name(user_input)
+    puts fake
+
+    hash[user_input] = fake
+  end
+
+  hash.each do |key, value|
+    puts "#{key} is also known as #{value}"
   end
 end
 
