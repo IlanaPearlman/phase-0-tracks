@@ -14,17 +14,26 @@ monthly_calendar = {
   december: 31
 }
 
+p rooms_in_house
+
 rooms_in_house = ["kitchen", "guest bathroom", "master bedroom", "master bathroom", "guest bedroom", "childrens bedroom", "dining room", "living room"]
 
+p rooms_in_house
+
 p monthly_calendar
-monthly_calendar.each {|month, days| puts "#{days} days in #{month}"}
+
+monthly_calendar.each {|month, days| puts "#{day} days in #{month}"
+
 p monthly_calendar
 
 p rooms_in_house
+
 rooms_in_house.each do |room|
   puts "#{room} is a 1 word room" unless room.include?(" ")
 end
+
 p rooms_in_house
 
-rooms_in_house.map!{|room| room.capitalize!}
+rooms_in_house.map {|room| room.capitalize!}
+
 p rooms_in_house
