@@ -100,31 +100,35 @@ def print_client_info(client)
 end
 
 def update_opportunity(client)
-  loop do
-    puts "Would you like to update any client information?"
-    puts "Type 'none' if there are no updates, or type the field to update:  name, partner, children, decor, budget, and flexibility."
-    user_input = gets_chomp
-    break if ['none', 'n'].include?(user_response.downcase)
-    client = select_update_field(client, user_input)
-  end
+  puts "Would you like to update any client information?"
+  puts "Type 'none' if there are no updates, or type the field to update:  name, partner, children, decor, budget, and flexibility."
+  user_input = gets.chomp
+  return client if ['none', 'n'].include?(user_input.downcase)
+  client = select_update_field(client, user_input)
 end
 
 def select_update_field(client, field)
   case field
   when "name"
     client[:name] = get_name
-  when partner
+    return client
+  when "partner"
     client[:client_partner_name] = get_client_partner_name
-  when children
+    return client
+  when "children"
     client[:children_information] = get_children_information
-  when decor
+    return client
+  when "decor"
     client[:decor_theme] = get_decor_theme
-  when budget
+    return client
+  when "budget"
     client[:budget] = get_budget
-  when flexibility
+    return client
+  when "flexibility"
     client[:whether_budget_flexible] = get_whether_budget_flexible
+    return client
   end
 end
 
 
-enter_new_client_info
+enter_and_check_client_info
