@@ -67,3 +67,22 @@ update_quantity(list, "ice cream", 4)
 remove_item(list, "lemonade")
 update_quantity(list, "ice cream", 1)
 print_groceries(list)
+
+=begin
+REFLECTION
+
+What did you learn about pseudocode from working on this challenge?
+- It organizes work well.
+What are the tradeoffs of using arrays and hashes for this challenge?
+- A hash stores the string grocery names and their numeral values conviniently. Whereas arrays would require a parallel set of data, such as by using 2 arrays or one array with alternating items and numbers.
+What does a method return?
+- It returns the return statement, or if none, the result of the final operation, or if none, nil.
+What kind of things can you pass into methods as arguments?
+- Any variables or a block.
+How can you pass information between methods?
+- You can pass iformation between methods by passing parameters to the methods.
+What concepts were solidified in this challenge, and what concepts are still confusing?
+- It addressed local variables, but which variables are changed by their use in methods when outside of the scope of that method was not explained.
+=end
+
+end
