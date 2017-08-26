@@ -7,8 +7,11 @@ Add a bit of code below your class declaration to check that you're able to init
 
 class Santa
 
-  def initialize
-    p "Initializing Santa instance ..."
+  def initialize(gender="female", ethnicity="Thai")
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
   end
 
   def speak
@@ -22,5 +25,25 @@ class Santa
 end
 
 mark = Santa.new #prints 'Initializing Santa instance ...'"
-p mark.speak == "Ho, ho, ho! Haaaappy holidays!"
-p mark.eat_milk_and_cookies("chocolate chip cookie") == "That was a good chocolate chip cookie!"
+mark.speak #prints "Ho, ho, ho! Haaaappy holidays!"
+mark.eat_milk_and_cookies("chocolate chip cookie") #prints "That was a good chocolate chip cookie!"
+
+santas = []
+santas << Santa.new("agender", "black")
+santas << Santa.new("female", "Latino")
+santas << Santa.new("bigender", "white")
+santas << Santa.new("male", "Japanese")
+santas << Santa.new("female", "prefer not to say")
+santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+santas << Santa.new("N/A", "N/A")
+
+p santas
+
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
+
+p santas
