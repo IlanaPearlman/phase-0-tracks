@@ -7,6 +7,9 @@ Add a bit of code below your class declaration to check that you're able to init
 
 class Santa
 
+  attr_reader :age, :ethnicity, :reindeer_ranking
+  attr_accessor :gender
+
   def initialize(gender="female", ethnicity="Thai")
     @gender = gender
     @ethnicity = ethnicity
@@ -22,11 +25,24 @@ class Santa
     p "That was a good #{cookie}!"
   end
 
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(reindeer)
+    @reindeer_ranking.delete(reindeer)
+    @reindeer_ranking.push(reindeer)
+  end
+
 end
 
-mark = Santa.new #prints 'Initializing Santa instance ...'"
-mark.speak #prints "Ho, ho, ho! Haaaappy holidays!"
-mark.eat_milk_and_cookies("chocolate chip cookie") #prints "That was a good chocolate chip cookie!"
+lucy = Santa.new("nonbinary","Japanese")
+p lucy.celebrate_birthday
+p lucy.age
+p lucy.get_mad_at("Rudolph")
+p lucy.reindeer_ranking
+p lucy.gender = "male"
+p lucy.ethnicity
 
 santas = []
 santas << Santa.new("agender", "black")
@@ -47,3 +63,8 @@ example_genders.length.times do |i|
 end
 
 p santas
+
+mark = Santa.new #prints 'Initializing Santa instance ...'"
+mark.speak #prints "Ho, ho, ho! Haaaappy holidays!"
+mark.eat_milk_and_cookies("chocolate chip cookie") #prints "That was a good chocolate chip cookie!"
+
