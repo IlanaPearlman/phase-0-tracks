@@ -16,5 +16,6 @@ poop
 eat
 run
 sleep
+play
 
 end
