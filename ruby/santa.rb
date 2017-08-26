@@ -8,7 +8,7 @@ Add a bit of code below your class declaration to check that you're able to init
 class Santa
 
   attr_reader :age, :ethnicity, :reindeer_ranking
-  attr_accessor :gender
+  attr_accessor :gender, :age
 
   def initialize(gender="female", ethnicity="Thai")
     @gender = gender
@@ -35,6 +35,18 @@ class Santa
   end
 
 end
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+1000.times do
+  new_santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  num = Random.new
+  new_santa.age = num.rand(0..140)
+  puts "gender = #{new_santa.gender}; ethnicity = #{new_santa.ethnicity}; reindeer_ranking = #{new_santa.reindeer_ranking}; age = #{new_santa.age}"
+  puts ""
+end
+
 
 lucy = Santa.new("nonbinary","Japanese")
 p lucy.celebrate_birthday
