@@ -8,26 +8,3 @@ The user should get a congratulatory message if they win, and a taunting message
 
 require_relative "game"
 
-describe Game do
-#initialize method
-#calls a string getting method and stores the string in an instance variable
-#stores instance variable guess string, initially all "_", of same length as other instance string
-#stores list of guessed letters in array, initially empty
-  let(:game) {Game.new}
-
-  it
-
-
-#guessing inteface method
-#prints the current clue
-#prints number of remaining guesses
-# loop until guess input valid
-#updates current clue if guessed letter is included
-
-#validate input
-# true if string length over 0 and wasn't previously guessed
-
-# game play method
-#calls guessing interface once per each letter of the initial string
-#congratulatory message if they win, and a taunting message if they lose.
-end
