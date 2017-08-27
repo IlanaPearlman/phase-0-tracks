@@ -21,16 +21,13 @@ class Game
 
   attr_reader :secret, :clue, :past_guesses, :remaining_guesses
 #initialize method
-#calls a string getting method and stores the string in an instance variable
-#stores instance variable clue for the guess string, initially all "_", of same length as other instance string
-#stores list of guessed letters in array, initially empty
+#stores instance variable for the secret string, #stores an initially empty array of past guesses
   def initialize(secret = "default")
     @secret = secret
     @past_guesses = []
   end
 
-#initial string method
-#returns instance variable for initial string, updates inital values for clue and remaining guesses
+#set secret string method
   def get_secret_to_guess
     puts "Player 1: what is the secret to be guessed?"
     @secret = gets.chomp
@@ -42,8 +39,7 @@ class Game
   end
 
 #guessing inteface method
-#prints the current clue
-#prints number of remaining guesses
+#prints the current clue and number of remaining guesses
 # loop until guess input valid
 #updates current clue if guessed letter is included
   def guess_character
@@ -104,7 +100,7 @@ class Game
   end
 
 # game play method
-#calls guessing interface once per each letter of the initial string
+#sets secret word, clue, and guess count
 #congratulatory message if they win, and a taunting message if they lose.
 
   def play
