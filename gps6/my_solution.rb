@@ -61,7 +61,7 @@ end
 #=======================================================================
 # DRIVER CODE
 
-STATE_DATA.keys.each do |current_state|
+STATE_DATA.keys.sort.each do |current_state|
   #initialize object
   virus_state_object = VirusPredictor.new(current_state, STATE_DATA[current_state][:population_density], STATE_DATA[current_state][:population])
   #call virus effects on that object
@@ -74,6 +74,7 @@ STATE_DATA = {
   "Alaska" => {population_density: 1.1111, population: 731449},
 =end
 
+=begin
  # initialize VirusPredictor for each state
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
@@ -85,3 +86,4 @@ alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density],
 alaska.virus_effects
 #=======================================================================
 # Reflection Section
+=end
