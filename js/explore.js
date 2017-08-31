@@ -20,10 +20,13 @@ return the new string
 function anotherStringReverse(string){
   var reversed = ''
   for (var i = string.length - 1; i >= 0; i--) {
-    console.log(reversed);
     reversed = reversed + string[i];
   }
   return reversed;
 }
 
-console.log(anotherStringReverse("more"));
+var reversedWord = anotherStringReverse("more");
+
+if (reversedWord.length > 2) {
+  console.log(reversedWord);
+}
