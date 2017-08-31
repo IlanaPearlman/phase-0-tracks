@@ -16,3 +16,31 @@ twoObjectComparison = function(obj1, obj2){
 
 twoObjectComparison({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 twoObjectComparison({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3});
+
+
+getNumberOneToTen = function(){
+  return Math.floor(Math.random() * 10) + 1;
+}
+
+getNumberZeroToTwentyFive = function(){
+  return Math.floor(Math.random() * 25);
+}
+
+getRandomWord = function(){
+  word = '';
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  for (i = 0; i < getNumberOneToTen(); i++){
+    word = word + alphabet[getNumberZeroToTwentyFive()];
+  }
+  return word;
+}
+
+buildStringsArray = function(length){
+  arrayOfStrings = [];
+  for (i = 0; i < length; i += 1){
+    arrayOfStrings.push(getRandomWord());
+  }
+  return arrayOfStrings;
+}
+
+
