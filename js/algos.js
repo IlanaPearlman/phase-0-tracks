@@ -29,7 +29,7 @@ getNumberZeroToTwentyFive = function(){
 getRandomWord = function(){
   word = '';
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
-  for (i = 0; i < getNumberOneToTen(); i++){
+  for (var i = 0; i < getNumberOneToTen(); i++){
     word = word + alphabet[getNumberZeroToTwentyFive()];
   }
   return word;
@@ -37,7 +37,7 @@ getRandomWord = function(){
 
 buildStringsArray = function(length){
   arrayOfStrings = [];
-  for (i = 0; i < length; i += 1){
+  for (var i = 0; i < length; i += 1){
     arrayOfStrings.push(getRandomWord());
   }
   return arrayOfStrings;
