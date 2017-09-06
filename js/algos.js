@@ -5,6 +5,7 @@ return true if they contain at least one key value pair
 else return false
 */
 
+<<<<<<< HEAD
 twoObjectComparison = function(obj1, obj2){
   for (var key in obj1){
     if (obj1.key == obj2.key) {
@@ -51,7 +52,7 @@ return true if they contain at least one key value pair
 else return false
 */
 
-longestPhrase = function(arrayOfWords){
+var longestPhrase = function(arrayOfWords){
   longest = arrayOfWords[0];
   for (var i = 1; i < arrayOfWords.length; i += 1){
     if (arrayOfWords[i].length > longest.length) {
@@ -61,7 +62,7 @@ longestPhrase = function(arrayOfWords){
   return longest;
 }
 
-test = longestPhrase(["long phrase","longest phrase","longer phrase"]);
+var test = longestPhrase(["long phrase","longest phrase","longer phrase"]);
 console.log(test);
 
 twoObjectComparison = function(obj1, obj2){
@@ -77,7 +78,7 @@ twoObjectComparison({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 twoObjectComparison({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3});
 
 
-getNumberOneToTen = function(){
+var getNumberOneToTen = function(){
   return Math.floor(Math.random() * 10) + 1;
 }
 
@@ -85,7 +86,7 @@ getNumberZeroToTwentyFive = function(){
   return Math.floor(Math.random() * 25);
 }
 
-getRandomWord = function(){
+var getRandomWord = function(){
   word = '';
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
   for (var i = 0; i < getNumberOneToTen(); i++){
@@ -94,7 +95,7 @@ getRandomWord = function(){
   return word;
 }
 
-buildStringsArray = function(length){
+var buildStringsArray = function(length){
   arrayOfStrings = [];
   for (var i = 0; i < length; i += 1){
     arrayOfStrings.push(getRandomWord());
@@ -102,7 +103,7 @@ buildStringsArray = function(length){
   return arrayOfStrings;
 }
 
-tenTimesTest = function(){
+var tenTimesTest = function(){
   for (var i = 0; i < 10; i += 1) {
     testArray = buildStringsArray(getNumberOneToTen());
     console.log(testArray);
@@ -111,5 +112,3 @@ tenTimesTest = function(){
 }
 
 tenTimesTest();
-
-push
